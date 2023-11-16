@@ -1,11 +1,12 @@
-import {Text, View, StyleSheet} from 'react-native';
+import {Text, View, StyleSheet, FlatList} from 'react-native';
 
 const KingsList = ({kingsList}) => {
-    const {id, name, rokStart, rokKoniec} = kingsList[0]
+    
 
     return(
         <View>
-            <Text>Kings list {id}, {name}, {rokStart} - {rokKoniec}</Text>
+            <Text>Kings list</Text>
+            <FlatList data = {kingsList} renderItem ={({item}) => <View><Text>id: {item.id}, name: {item.name}, panowanie: {item.rokStart} - {item.rokKoniec}</Text> </View>}/>
         </View>
     )
 }
